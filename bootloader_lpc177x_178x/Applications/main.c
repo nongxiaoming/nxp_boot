@@ -33,6 +33,10 @@ int main(void)
     }
 	  else
 	  {
+			 if(spiflash_check_update()==1)
+      {
+			 spiflash_update();
+			}
 	    if ( check_isp_entry_pin() )
 		  {
 		    // isp entry not requested and CRP3 not enabled
