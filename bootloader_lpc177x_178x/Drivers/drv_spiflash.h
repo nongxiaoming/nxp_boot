@@ -7,22 +7,22 @@
 #define SPI_FLASH_PerWritePageSize      256                          //每页大小
 
 /*W25X指令定义*/
-#define W25X_WriteEnable		      0x06                            //写使能指令
-#define W25X_WriteDisable		      0x04                            //写失能指令
-#define W25X_ReadStatusReg		      0x05                            //读状态寄存器
-#define W25X_WriteStatusReg		      0x01                            //写状态寄存器
-#define W25X_ReadData			      0x03                            //读数据指令
-#define W25X_FastReadData		      0x0B                            //快速读模式指令
-#define W25X_FastReadDual		      0x3B                            //快读双输出指令    
-#define W25X_PageProgram		      0x02                            //页写入指令
-#define W25X_BlockErase			      0xD8                            //块擦除指令
-#define W25X_SectorErase		      0x20                            //扇区擦除指令
-#define W25X_ChipErase			      0xC7                            //片擦除指令
-#define W25X_PowerDown			      0xB9                            //进入掉电模式指令
-#define W25X_ReleasePowerDown	      0xAB                            //退出掉电模式
-#define W25X_DeviceID			      0xAB                            //读取芯片ID
-#define W25X_ManufactDeviceID   	  0x90                            //读取制造ID
-#define W25X_JedecDeviceID		      0x9F 
+#define W25X_WriteEnable              0x06                            //写使能指令
+#define W25X_WriteDisable             0x04                            //写失能指令
+#define W25X_ReadStatusReg            0x05                            //读状态寄存器
+#define W25X_WriteStatusReg           0x01                            //写状态寄存器
+#define W25X_ReadData                 0x03                            //读数据指令
+#define W25X_FastReadData             0x0B                            //快速读模式指令
+#define W25X_FastReadDual             0x3B                            //快读双输出指令    
+#define W25X_PageProgram              0x02                            //页写入指令
+#define W25X_BlockErase               0xD8                            //块擦除指令
+#define W25X_SectorErase              0x20                            //扇区擦除指令
+#define W25X_ChipErase                0xC7                            //片擦除指令
+#define W25X_PowerDown                0xB9                            //进入掉电模式指令
+#define W25X_ReleasePowerDown         0xAB                            //退出掉电模式
+#define W25X_DeviceID                 0xAB                            //读取芯片ID
+#define W25X_ManufactDeviceID         0x90                            //读取制造ID
+#define W25X_JedecDeviceID            0x9F
 
 #define WIP_Flag                      0x01                            //写入忙标志位
 #define Dummy_Byte                    0xFF                            //空数据
@@ -57,21 +57,21 @@ void SPI_FLASH_BulkErase(void);
 * 返回值：void
 * 功能：SPIFLASH页写入数据函数，外部调用
 *********************************************************************************************/
-void SPI_FLASH_PageWrite(uint8_t* pBuffer, uint32_t WriteAddr, uint16_t NumByteToWrite);
+void SPI_FLASH_PageWrite(uint8_t *pBuffer, uint32_t WriteAddr, uint16_t NumByteToWrite);
 /******************************************************************************************
 *函数名：SPI_FLASH_BufferWrite()
 * 参数：uint8_t* pBuffer, uint32_t WriteAddr, uint16_t NumByteToWrite 数据指针，写入地址，写入的个数
 * 返回值：void
 * 功能：SPIFLASH多个数据函数，外部调用
 *********************************************************************************************/
-void SPI_FLASH_BufferWrite(uint8_t* pBuffer, uint32_t WriteAddr, uint16_t NumByteToWrite);
+void SPI_FLASH_BufferWrite(uint8_t *pBuffer, uint32_t WriteAddr, uint16_t NumByteToWrite);
 /******************************************************************************************
 *函数名：SPI_FLASH_BufferRead()
 * 参数：uint8_t* pBuffer, uint32_t ReadAddr, uint16_t NumByteToRead 数据指针，读出的地址，读出的个数
 * 返回值：void
 * 功能：SPIFLASH多个数据函数，外部调用
 *********************************************************************************************/
-void SPI_FLASH_BufferRead(uint8_t* pBuffer, uint32_t ReadAddr, uint16_t NumByteToRead);
+void SPI_FLASH_BufferRead(uint8_t *pBuffer, uint32_t ReadAddr, uint16_t NumByteToRead);
 /******************************************************************************************
 *函数名：SPI_FLASH_ReadID()
 * 参数：void
