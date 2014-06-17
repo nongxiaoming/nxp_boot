@@ -68,7 +68,7 @@ extern const unsigned crp;
 //   <o8> MAC_Address_1 <0x00-0xFF>  
 // </h>
 */
-#define ETHERNET_DEBUG 	1			     /* Use Debug */
+#define ETHERNET_DEBUG 	0			     /* Use Debug */
 
 #define MYMAC_6         0x0C		   /* MAC_6 */
 #define MYMAC_5         0x1D		   /* MAC_5 */

@@ -1,14 +1,14 @@
 //-----------------------------------------------------------------------------
-// Software that is described herein is for illustrative purposes only  
-// which provides customers with programming information regarding the  
-// products. This software is supplied "AS IS" without any warranties.  
-// NXP Semiconductors assumes no responsibility or liability for the 
-// use of the software, conveys no license or title under any patent, 
-// copyright, or mask work right to the product. NXP Semiconductors 
-// reserves the right to make changes in the software without 
-// notification. NXP Semiconductors also make no representation or 
-// warranty that such application will be suitable for the specified 
-// use without further testing or modification. 
+// Software that is described herein is for illustrative purposes only
+// which provides customers with programming information regarding the
+// products. This software is supplied "AS IS" without any warranties.
+// NXP Semiconductors assumes no responsibility or liability for the
+// use of the software, conveys no license or title under any patent,
+// copyright, or mask work right to the product. NXP Semiconductors
+// reserves the right to make changes in the software without
+// notification. NXP Semiconductors also make no representation or
+// warranty that such application will be suitable for the specified
+// use without further testing or modification.
 //-----------------------------------------------------------------------------
 
 #ifndef _EMAC_H
@@ -22,7 +22,7 @@
 #define ETH_MAX_FLEN        1522        /* Max. Ethernet Frame Size          */
 
 /* EMAC variables located in 16K Ethernet SRAM */
-#define RX_DESC_BASE		0x20000000
+#define RX_DESC_BASE        0x20000000
 #define RX_STAT_BASE        (RX_DESC_BASE + NUM_RX_FRAG*8)
 #define TX_DESC_BASE        (RX_STAT_BASE + NUM_RX_FRAG*8)
 #define TX_STAT_BASE        (TX_DESC_BASE + NUM_TX_FRAG*8)
@@ -302,8 +302,8 @@
 #define DP83848C_ID         0x20005C90  /* PHY Identifier                    */
 
 void init_emac(void);
-unsigned emac_getline(char * buf,int max_len,int * count);
-unsigned emac_sendline_crlf(char * buf);
+unsigned emac_getline(char *buf, int max_len, int *count);
+unsigned emac_sendline_crlf(char *buf);
 void emac_handshake(void);
 
 #endif /* _EMAC_H */

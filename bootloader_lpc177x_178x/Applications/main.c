@@ -5,6 +5,7 @@
 #include "eth_isp.h"
 #include "board.h"
 #include "drv_uart.h"
+#include "spiflash_update.h"
 
 const unsigned crp __attribute__((section(".ARM.__at_0x2FC"))) = CRP;
 
@@ -21,6 +22,7 @@ void enter_isp(void)
 }
 int main(void)
 {
+	 board_init();
   if( user_code_present() )
   { 
 		LPC_IOCON->P3_0&=~0x07;
@@ -35,12 +37,14 @@ int main(void)
 	  {
 			 if(spiflash_check_update()==1)
       {
-			 spiflash_update();
+				//printf("start to update\r\n");
+			  spiflash_update();
+				execute_user_code();
 			}
 	    if ( check_isp_entry_pin() )
 		  {
 		    // isp entry not requested and CRP3 not enabled
-		    execute_user_code();
+		   execute_user_code();
 		  }
 		  else
 		  {
